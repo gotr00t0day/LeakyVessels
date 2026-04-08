@@ -1,7 +1,5 @@
 # LeakyVessels
 
-# leakyvessels
-
 Small Linux helper that checks whether the host’s **`runc`** version is in the range affected by **CVE-2024-21626** (“Leaky Vessels”). That class of issues can, under the right conditions, weaken container isolation with respect to the host filesystem—so knowing if you are still on a vulnerable runtime matters for patching and image rebuilds.
 
 Author: c0d3Ninja (see source header).
