@@ -17,7 +17,7 @@ This tool checks whether the host’s **`runc`** version is in the range affecte
 ## Build (standalone)
 
 ```bash
-g++ -std=c++20 -Wall -Wextra -O2 -o leakyvessels tools/leakyvessels.cpp
+g++ leakyvessels.cpp -o leakyvessels -std=c++20 -pthread
 ```
 
 ## Limitations
