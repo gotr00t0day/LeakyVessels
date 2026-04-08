@@ -2,8 +2,7 @@
 Author:  c0d3Ninja
 Website: https://gotr00t0day.github.com
 
-Enables a container escape by checking for the runc “Leaky Vessels” vulnerability (CVE-2024-21626), 
-which can allow an attacker in a container to access the host filesystem.
+This tool checks whether the host’s runc version is in the range affected by CVE-2024-21626 (“Leaky Vessels”). 
 
 */
 
