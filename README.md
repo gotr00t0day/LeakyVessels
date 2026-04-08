@@ -31,3 +31,4 @@ Use only on systems you are authorized to assess.
 ## References
 
 - **CVE-2024-21626** — Leaky Vessels / `runc` (consult current vendor advisories and release notes for exact fixed versions and deployment steps).
+- https://www.wiz.io/blog/leaky-vessels-container-escape-vulnerabilities
