@@ -33,24 +33,6 @@ From the repository root:
 g++ -std=c++20 -Wall -Wextra -O2 -o leakyvessels tools/leakyvessels.cpp
 ```
 
-Or from `tools/`:
-
-```bash
-g++ -std=c++20 -Wall -Wextra -O2 -o leakyvessels leakyvessels.cpp
-```
-
-No libraries beyond the C++ standard library and the system C/POSIX layer are required.
-
-## ShadowHarvester
-
-`leakyvessels.cpp` is **not** linked into the main `shadowharvester` binary in the project `Makefile`; it is intended as a **standalone** utility alongside other `tools/` programs.
-
-## Files
-
-| File | Role |
-|------|------|
-| `tools/leakyvessels.cpp` | Implementation and `main()` |
-
 ## Limitations
 
 - **Version parsing** expects dot-separated numeric components (e.g. `1.1.11`). Unusual vendor suffixes or non-numeric segments can break `parse_version` or give misleading results.
