@@ -1,23 +1,12 @@
 # LeakyVessels
 
-Small Linux helper that checks whether the host’s **`runc`** version is in the range affected by **CVE-2024-21626** (“Leaky Vessels”). That class of issues can, under the right conditions, weaken container isolation with respect to the host filesystem—so knowing if you are still on a vulnerable runtime matters for patching and image rebuilds.
-
-Author: c0d3Ninja (see source header).
+This tool checks whether the host’s **`runc`** version is in the range affected by **CVE-2024-21626** (“Leaky Vessels”). That class of issues can, under the right conditions, weaken container isolation with respect to the host filesystem—so knowing if you are still on a vulnerable runtime matters for patching and image rebuilds.
 
 ## What it does
 
 - Looks for `runc` in common paths (`/usr/bin/runc`, `/usr/local/sbin/runc`, `/usr/sbin/runc`) or on `PATH` via `which`.
 - If found, runs `runc --version` and parses the reported version string.
 - Compares the version to the tool’s internal threshold: runc **before 1.1.12** is treated as **vulnerable**; **1.1.12 and newer** as not vulnerable (for normal `X.Y.Z` style versions).
-
-There is **no CLI**: run the binary and read stdout.
-
-## Output
-
-- Prints an ASCII banner and `Checking for CVE-2024-21626..`.
-- If `runc` is found: prints `Found: runc <version>`.
-- If the version parses as vulnerable: prints that version in **red** with `Vulnerable to Leaky Vessels`.
-- If `runc` is not found: **yellow** message `runc not found!`
 
 ## Requirements
 
@@ -26,8 +15,6 @@ There is **no CLI**: run the binary and read stdout.
 - POSIX-style `popen` / `system` (Linux, etc.).
 
 ## Build (standalone)
-
-From the repository root:
 
 ```bash
 g++ -std=c++20 -Wall -Wextra -O2 -o leakyvessels tools/leakyvessels.cpp
